@@ -39,10 +39,21 @@ jobs:
     - name: list
       run: ls
 
+    - name: Upload to Mega JPG
+      uses: Difegue/action-megacmd@master
+      with:
+        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action/*.jpg /Pixiv/
+      env:
+        USERNAME: ${{ secrets.MEGA_USERNAME }}
+        PASSWORD: ${{ secrets.MEGA_PASSWORD }}
+    - name: Log out
+      uses: Difegue/action-megacmd@master
+      with:
+        args: logout
     - name: Upload to Mega
       uses: Difegue/action-megacmd@master
       with:
-        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action/*.{png,jpg} /Pixiv/
+        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action/*.png /Pixiv/
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
