@@ -21,13 +21,6 @@ jobs:
     #   run: |
     #     rm -f -- *.jpg
     #     rm -f -- *.png
-    - name: Clear Previous
-      uses: Difegue/action-megacmd@master
-      with:
-        args: rm -rf /Pixiv || true
-      env:
-        USERNAME: ${{ secrets.MEGA_USERNAME }}
-        PASSWORD: ${{ secrets.MEGA_PASSWORD }}
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
@@ -40,7 +33,7 @@ jobs:
     - name: Upload to Mega
       uses: Difegue/action-megacmd@master
       with:
-        args: put -c ./*.{png,jpg} /Pixiv/
+        args: (rm -rf /Pixiv || true) && put -c ./*.{png,jpg} /Pixiv/
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
