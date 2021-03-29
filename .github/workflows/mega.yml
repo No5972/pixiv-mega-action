@@ -49,6 +49,17 @@ jobs:
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
+    - name: Log out
+      uses: Difegue/action-megacmd@master
+      with:
+        args: logout
+    - name: Upload to Mega
+      uses: Difegue/action-megacmd@master
+      with:
+        args: put -c *.png /Pixiv/
+      env:
+        USERNAME: ${{ secrets.MEGA_USERNAME }}
+        PASSWORD: ${{ secrets.MEGA_PASSWORD }}
     # - name: Upload to this repo
     #   run: |
     #     git config --global user.name "No5972" # Change to your GitHub user name
