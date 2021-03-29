@@ -53,7 +53,7 @@ jobs:
     - name: Upload to Mega
       uses: Difegue/action-megacmd@master
       with:
-        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action/*.png /Pixiv/
+        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action /Pixiv/
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
