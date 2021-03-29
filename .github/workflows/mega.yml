@@ -21,14 +21,6 @@ jobs:
     #   run: |
     #     rm -f -- *.jpg
     #     rm -f -- *.png
-    
-    - name: Initialize Mage
-      uses: Difegue/action-megacmd@master
-      with:
-        args: mkdir Pixiv && false
-      env:
-        USERNAME: ${{ secrets.MEGA_USERNAME }}
-        PASSWORD: ${{ secrets.MEGA_PASSWORD }}
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
