@@ -37,15 +37,7 @@ jobs:
     - name: Run pa.py
       run: python pa.py
     - name: list
-      run: ls
-
-    - name: Upload to Mega JPG
-      uses: Difegue/action-megacmd@master
-      with:
-        args: put -c /home/runner/work/pixiv-mega-action/pixiv-mega-action/*.jpg /Pixiv/
-      env:
-        USERNAME: ${{ secrets.MEGA_USERNAME }}
-        PASSWORD: ${{ secrets.MEGA_PASSWORD }}
+      run: ls && pwd
     - name: Log out
       uses: Difegue/action-megacmd@master
       with:
