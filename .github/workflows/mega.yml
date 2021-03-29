@@ -33,7 +33,7 @@ jobs:
     - name: Install Dependence
       run: pip install requests pycryptodome bce-python-sdk
     - name: Get Current Location
-      run: pwd && false
+      run: pwd
     - name: Run pa.py
       run: python pa.py
     - name: list
