@@ -24,7 +24,7 @@ jobs:
     - name: Clear Previous
       uses: Difegue/action-megacmd@master
       with:
-        args: rm -rf /Pixiv
+        args: rm -rf /Pixiv || true
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
