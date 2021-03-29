@@ -38,8 +38,6 @@ jobs:
       run: python pa.py
     - name: list
       run: ls && pwd
-    - name: Move to Mega Working Directory
-      run: mv *.{jpg,png} /github/workspace/
     - name: Log out
       uses: Difegue/action-megacmd@master
       with:
