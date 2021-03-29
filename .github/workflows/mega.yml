@@ -32,6 +32,8 @@ jobs:
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
       run: pip install requests pycryptodome bce-python-sdk
+    - name: Get Current Location
+      run: pwd && false
     - name: Run pa.py
       run: python pa.py
     - name: list
