@@ -33,7 +33,7 @@ jobs:
     - name: Upload to Mega
       uses: Difegue/action-megacmd@master
       with:
-        args: (rm -rf /Pixiv || true) && put -c ./*.{png,jpg} /Pixiv/
+        args: rm -rf /Pixiv  && put -c ./*.{png,jpg} /Pixiv/
       env:
         USERNAME: ${{ secrets.MEGA_USERNAME }}
         PASSWORD: ${{ secrets.MEGA_PASSWORD }}
